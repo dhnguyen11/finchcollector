@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Perch List</h1>
+
+{% for perch in perch_list %}
+  <a href="{% url 'perches_detail' perch.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ perch.name }}</span>
+            <p>Location: {{ perch.location }}</p>
+            <p>Number of perches: {{ perch.num_perches }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
