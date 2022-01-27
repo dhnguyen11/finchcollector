@@ -15,4 +15,5 @@ urlpatterns = [
     path('perches/create/', views.PerchCreate.as_view(), name='perches_create'),
     path('perches/<int:pk>/update/', views.PerchUpdate.as_view(), name='perches_update'),
     path('perches/<int:pk>/delete/', views.PerchDelete.as_view(), name='perches_delete'),
+    path('finches/<int:finch_id>/assoc_perch/<int:perch_id>/', views.assoc_perch, name='assoc_perch')
 ]

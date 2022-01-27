@@ -52,6 +52,10 @@ def add_feeding(request, finch_id):
         new_feeding.save()
     return redirect('detail', finch_id=finch_id)
 
+def assoc_perch(request, finch_id, perch_id):
+    Finch.objects.get(id=finch_id).perches.add(perch_id)
+    return redirect('detail', finch_id=finch_id)
+
 class PerchList(ListView):
     model = Perch
 
